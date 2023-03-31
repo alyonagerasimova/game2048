@@ -1,0 +1,117 @@
+:root {
+    --y: 2;
+    --x: 1;
+    --cell-size: 20vmin;
+    --cell-gap: 2vmin;
+    --bg-lightness: #fff;
+    --text-lightness: #000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bbada0;
+    height: 100vh;
+}
+
+#game-board {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(4, var(--cell-size));
+    grid-template-rows: repeat(4, var(--cell-size));
+    grid-gap: var(--cell-gap);
+    border-radius: 1vmin;
+}
+
+.cell {
+    background-color: rgba(238,228,218,.35);
+    border-radius: 1vmin;
+}
+
+.tile {
+    position: absolute;
+    /*background-color: hsl(25, 60%, var(--bg-lightness));*/
+    /*color: hsl(20, 25%, var(--text-lightness));*/
+    color: #776e65;
+    border-radius: 1vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 7.5vmin;
+    font-weight: bold;
+    top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)));
+    left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)));
+    height: 20vmin;
+    width: 20vmin;
+    transition: 100ms;
+    animation: show 200ms;
+}
+
+.x2{
+    background-color: #eee4da;
+}
+.x4{
+    background-color: #ede0c8;
+}
+.x8{
+    color: #f9f6f2;
+    background-color: #f2b179;
+}
+.x16{
+    color: #f9f6f2;
+    background-color: #f59563;
+}
+.x32{
+    color: #f9f6f2;
+    background-color: #f67c5f;
+}
+.x64{
+    color: #f9f6f2;
+    background-color: #f65e3b;
+}
+.x128{
+    color: #f9f6f2;
+    background-color: #edcf72;
+}
+.x256{
+    color: #f9f6f2;
+    background-color: #edcc61;
+}
+.x512{
+    color: #f9f6f2;
+    background-color: #edc850;
+}
+.x1024{
+    color: #f9f6f2;
+    background-color: #edc53f;
+}
+.x2048{
+    color: #f9f6f2;
+    background-color: #edc22e;
+}
+.x4096{
+    color: #f9f6f2;
+    /*background: #fe3d3d;*/
+    background-color: #3c3a32;
+}
+.x8192{
+    color: #f9f6f2;
+    /*background-color: #ff2020;*/
+    background-color: #3c3a32;
+}
+
+
+@keyframes show {
+    0% {
+        opacity: 0.5;
+        transform: scale(0);
+    }
+}
